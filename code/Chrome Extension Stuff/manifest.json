@@ -1,0 +1,41 @@
+{
+  "manifest_version": 2,
+  "name": "Spoiler 2.0",
+  "version": "2.0",
+  "description": "An extension to save you from pesky spoilers.",
+  "icons": {
+    "16": "images/get_started16.png",
+    "32": "images/get_started32.png",
+    "48": "images/get_started48.png",
+    "128": "images/get_started128.png"
+  },
+  "browser_action": {
+  	"default_icon": {
+  		"16": "images/get_started16.png",
+        "32": "images/get_started32.png",
+        "48": "images/get_started48.png",
+        "128": "images/get_started128.png"
+  	},
+  	"default_popup": "popup.html"
+  },
+  "content_scripts": [ 
+    { 
+      "js": [ "jquery.min.js", "background.js" ],
+      "matches": [ "http://*/*", "https://*/*"]
+    }
+  ], 
+  "author": "Cormac and Dearbhla",
+  "background": {
+  	"scripts": ["background.js"],
+  	"persistent": false
+  },
+  "commands": {},
+  "incognito": "split",
+  "permissions": [
+    "activeTab",
+    "declarativeContent",
+    "storage",
+    "tabs"
+  ],
+  "short_name": "Spoiler 2.0"
+}
